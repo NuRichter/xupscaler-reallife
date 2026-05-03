@@ -29,6 +29,7 @@ xup run "C:\Users\kamu\foto.jpg" --scale 4x
 Drag and drop path ke terminal juga oke, tanda kutip otomatis dibuang.
 
 Output disimpan di folder yang sama dengan file input:
+
 - `foto_reallife_4x.png` - hasil akhir
 - `foto_reallife_4x.zip` - file yang sama, tapi sudah dikemas
 
@@ -55,6 +56,31 @@ Kalau mau skip auto-download:
 ```bash
 xup run foto.jpg --scale 4x --no-download
 ```
+
+Kalau auto-download gagal, kamu bisa unduh manual dan taruh file-nya di folder `models/<nama_model>/` sesuai tabel di bawah.
+
+---
+
+## Download manual
+
+Letakkan tiap file weight di folder `models/` sesuai kolom path-nya.
+
+| Model     | File                             | Path                  | Link                                                               |
+| --------- | -------------------------------- | --------------------- | ------------------------------------------------------------------ |
+| SUPIR     | `SUPIR-v0Q.ckpt`               | `models/supir/`     | [Kijai/SUPIR_pruned](https://huggingface.co/Kijai/SUPIR_pruned)       |
+| DiffBIR   | `general_swinir_v1.ckpt`       | `models/diffbir/`   | [lxq007/DiffBIR](https://huggingface.co/lxq007/DiffBIR)               |
+| DiffBIR   | `v2.pth`                       | `models/diffbir/`   | [lxq007/DiffBIR](https://huggingface.co/lxq007/DiffBIR)               |
+| SeeSR     | `ram_swin_large_14m.pth`       | `models/seesr/`     | [starboardai/seesr](https://huggingface.co/starboardai/seesr)         |
+| SeeSR     | `seesr.safetensors`            | `models/seesr/`     | [starboardai/seesr](https://huggingface.co/starboardai/seesr)         |
+| PASD      | `pasd.safetensors`             | `models/pasd/`      | [zhanggy/PASD](https://huggingface.co/zhanggy/PASD)                   |
+| ResShift  | `resshift_realsrx4_s15_v1.pth` | `models/resshift/`  | [ShinyPikachu/ResShift](https://huggingface.co/ShinyPikachu/ResShift) |
+| InvSR     | `invsr.pth`                    | `models/invsr/`     | [zsyOAOA/InvSR](https://huggingface.co/zsyOAOA/InvSR)                 |
+| OSEDiff   | `osediff.pkl`                  | `models/osediff/`   | [rongyaofang/OSEDiff](https://huggingface.co/rongyaofang/OSEDiff)    |
+| FaithDiff | `faithdiff.safetensors`        | `models/faithdiff/` | [KunpengSong/FaithDiff](https://huggingface.co/KunpengSong/FaithDiff) |
+
+> OSEDiff memerlukan login HuggingFace dan persetujuan akses sebelum bisa diunduh. Buka link-nya, login, lalu request access dulu.
+
+Setelah file ada di tempat yang benar, jalankan `xup status` untuk verifikasi.
 
 ---
 
